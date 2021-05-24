@@ -1,0 +1,66 @@
+{%- assign collection1 = collections[section.settings.collection1] -%}
+{%- assign collection2 = collections[section.settings.collection2] -%} 
+
+    <section class="two-md-imgs">
+        <div class="row">
+            <div class="col">
+               
+                <img src={{section.settings.left_image | img_url: '1200x'}} alt="">
+                <h2>{{collection1.title}}</h2>
+                <a href={{collections1.url}}>{{section.settings.left_image_text}}</a>
+            </div>
+            <div class="col">
+                <img src={{section.settings.right_image | img_url: '1200x'}} alt="">
+                <h2>{{collection2.title}}</h2>
+                <a href={{collections2.url}}>{{section.settings.left_image_text}}</a>
+            </div>
+        </div>
+    </section> 
+
+    {% schema %}
+    {
+        "name": "Two Featured Collections",
+        "settings": [
+        {
+            "type": "collection",
+            "id": "collection1",
+            "label": "Collection 1",
+            "info": "Choose a collection"
+         },
+         {
+            "type": "image_picker",
+            "id": "left_image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "left_image_text",
+            "label": "Title",
+            "default": "Dope Stuff"
+        },
+        {
+            "type": "collection",
+            "id": "collection2",
+            "label": "Collection 2",
+            "info": "Choose a collection"
+        },
+        {
+            "type": "image_picker",
+            "id": "right_image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "right_image_text",
+            "label": "Title",
+            "default": "Dope Stuff"
+        }
+        ],
+        "presets": [
+        {
+          "name":"Two Featured Collections",
+          "category": "Image"
+        }
+      ]
+    }
+    {% endschema %}

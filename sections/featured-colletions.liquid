@@ -1,0 +1,105 @@
+{%- assign collection1 = collections[section.settings.collection1] -%}
+{%- assign collection2 = collections[section.settings.collection2] -%}
+{%- assign collection3 = collections[section.settings.collection3] -%}
+{%- assign collection4 = collections[section.settings.collection4] -%}
+
+    <section class="featured-collections">
+        <div class="row">
+            <div class="col collection-title">
+                <h2 style="color: {{section.settings.header_color}};">{{section.settings.header_text}}</h2>
+                <p style="color: {{section.settings.sub_color}};">{{section.settings.sub_text}}</p>
+            </div>
+        </div> 
+        <div class="row product-list">
+            <div class="col">
+                <img src={{collection1.image  | img_url: 'medium'}}/> 
+                <a style="color: {{section.settings.link_color}};" href="{{collection1.url}}">{{collection1.title}}</a>
+            </div>
+            <div class="col">
+                <img src={{collection2.image  | img_url: 'medium'}}/> 
+                <a style="color: {{section.settings.link_color}};" href="{{collection2.url}}">{{collection2.title}}</a>
+            </div>
+            <div class="col">
+                <img src={{collection3.image  | img_url: 'medium'}}/> 
+                <a style="color: {{section.settings.link_color}};" href="{{collection3.url}}">{{collection3.title}}</a>
+            </div>
+            <div class="col">
+                <img src={{collection4.image  | img_url: 'medium'}}/> 
+                <a style="color: {{section.settings.link_color}};" href="{{collection4.url}}">{{collection4.title}}</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    {% schema %}
+    {
+      "name": "Four Collections ",  
+      "settings": [
+        {
+            "type": "text",
+            "id": "header_text",
+            "label": "Title",
+            "default": "Dope Stuff"
+        },
+        {
+            "type": "text",
+            "id": "sub_text",
+            "label": "Title",
+            "default": "From men's and women's shoes to a wide array of bags, discover sustainable styles made for all."
+    
+        },
+        {
+          "type": "color",
+          "id": "header_color",
+          "label": "Header Color",
+          "default": "#212529"
+    
+        },
+        {
+            "type": "color",
+            "id": "sub_color",
+            "label": "Sub Color",
+            "default": "#212529"
+      
+          },
+        {
+          "type": "collection",
+          "id": "collection1",
+          "label": "Collection 1",
+          "info": "Choose a collection"
+       },
+        {
+          "type": "collection",
+          "id": "collection2",
+          "label": "Collection 2",
+          "info": "Choose a collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection3",
+        "label": "Collection 3",
+        "info": "Choose a collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection4",
+        "label": "Collection 4",
+        "info": "Choose a collection"
+      },
+      {
+        "type":"color",
+        "id": "link_color",
+        "label":"Link Color",
+        "default":"#EA0606"
+      }
+      ],
+      "presets": [
+        {
+          "name": " Four Collections",
+          "category": "Collection"
+        }
+      ]
+    }
+    {% endschema %}

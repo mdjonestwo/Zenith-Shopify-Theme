@@ -1,0 +1,25 @@
+<section class="small-photo">
+    <div class="row">
+        <div class="sm-img" style="background: url({{section.settings.small_image | img_url: '1200x'}});">
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Small Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "small_image",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+    {
+      "name":"Small Image",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

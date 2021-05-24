@@ -1,0 +1,35 @@
+<section class="two-collections">
+    <div class="row">      
+        <div class="l-img" style="background: url({{section.settings.left_image | img_url: '1200x'}}); background-size: cover;
+        background-position: center center;"></div>
+        <div class="r-img" style="background: url({{section.settings.right_image | img_url: '1200x'}});     background-size: cover;
+        background-position: center center;"></div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Two Large Images",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "left_image",
+        "label": "Left Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "right_image",
+        "label": "Right Image"
+      }
+   
+    ],
+    "presets": [
+    {
+      "name":"Two Large Images",
+      "category": "Image"
+    }
+  ]
+
+}
+{% endschema %}

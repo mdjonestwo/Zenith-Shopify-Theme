@@ -1,0 +1,44 @@
+<section class="message">
+    <div class="row">
+        <div class="col">
+            <h2>
+                {{section.settings.header_text}}
+            </h2>
+            <p>{{section.settings.body_text}}</p>
+            <a href="">{{section.settings.link_text}}</a>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Message",
+    "settings": [
+    {
+       "type": "text",
+       "id": "header_text",
+       "default": "Quality is our priority",
+       "label": "Header"
+    },
+    {
+        "type": "text",
+        "id": "body_text",
+        "default": "We use better materials and better manufacturing to create better products.",
+        "label": "Body"
+     },
+     {
+        "type": "text",
+        "id": "link_text",
+        "default": "Learn More",
+        "label": "Link"
+     }
+    ],
+    "presets": [
+    {
+      "name":"Message",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

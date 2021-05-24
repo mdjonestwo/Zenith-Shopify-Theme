@@ -215,13 +215,14 @@ nav .links i{
     background: url(jumbo-model.jpg);
     background-size: cover;
     background-position: center center;
+    background-repeat: none;
 }
 
 .jumbo .titles{
     position: absolute;
     z-index: 1;
-    top: 50%;
-    left: 30%;
+    top: 30%;
+    left: 15%;
     color: white;
 }
 

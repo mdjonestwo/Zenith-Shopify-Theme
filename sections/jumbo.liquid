@@ -1,0 +1,45 @@
+<section class="jumbo">
+    <div class="row">
+        <div class="bg-image" style=" background: url({{section.settings.bg_image | img_url: '1200x'}});     background-size: cover;
+        background-position: center center;
+        background-repeat: none;"></div>
+        <!-- <div class="titles">
+            <h1>{{section.settings.jumbo_text}}</h1>
+            <h4>{{section.settings.sub_text}}</h4>
+        </div> -->
+    </div>      
+</section>
+
+{% schema %}
+{
+    
+        "name": "Jumbo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+          },
+          {
+            "type": "text",
+            "id": "jumbo_text",
+            "default": "The Redd Store",
+            "label": "Headings"
+         },
+         {
+            "type": "text",
+            "id": "sub_text",
+            "default": "Fresh Looks",
+            "label": "Sub heading"
+         }
+        ],
+        "presets": [
+        {
+          "name":"Jumbo",
+          "category": "Image"
+        }
+      ]
+    
+ 
+}
+{% endschema %}

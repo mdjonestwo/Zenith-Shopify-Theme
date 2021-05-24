@@ -1,0 +1,27 @@
+
+    <section class="large-photo">
+        <div class="row">
+            <div class="lg-bg" style="background: url({{section.settings.bottom_image | img_url: '1200x'}}); background-size: cover;
+            background-position: center center;">
+            </div>
+        </div>
+    </section>
+
+    {% schema %}
+    {
+        "name": "Large Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "bottom_image",
+            "label": "Image"
+          }
+        ],
+        "presets": [
+        {
+          "name":"Large Image",
+          "category": "Image"
+        }
+      ]
+    }
+    {% endschema %}

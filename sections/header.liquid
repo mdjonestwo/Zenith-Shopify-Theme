@@ -91,9 +91,31 @@
         </div>
         <div class="col">
             <ul class="links">
-                <i class="fas fa-user"></i>
-                <i></i>
-                <i class="fas fa-shopping-bag"></i>
+              {% if shop.customer_accounts_enabled %}
+              {% if customer %}
+                <a href="{{ routes.account_url }}" class="site-header__icon site-header__account">
+                  {% include 'icon-login' %}
+                  <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span>
+                </a>
+              {% else %}
+                <a href="{{ routes.account_login_url }}" class="site-header__icon site-header__account">
+                  {% include 'icon-login' %}
+                  <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span>
+                </a>
+              {% endif %}
+            {% endif %}
+            <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
+              {% include 'icon-search' %}
+              <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
+            </button>
+                <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
+                  {% include 'icon-cart' %}
+                  <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+                  <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %} critical-hidden" data-cart-count-bubble>
+                    <span data-cart-count>{{ cart.item_count }}</span>
+                    <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+                  </div>
+                </a>
             </ul>
         </div>       
     </div>
