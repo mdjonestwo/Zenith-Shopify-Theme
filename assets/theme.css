@@ -1096,11 +1096,9 @@ textarea {
     clear: both; }
 
 .main-content {
-  display: block;
-  padding-top: 35px; }
+  display: block; }
   @media only screen and (min-width: 750px) {
-    .main-content {
-      padding-top: 55px; } }
+ }
 
 .section-header {
   margin-bottom: 35px; }

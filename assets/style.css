@@ -41,11 +41,14 @@ nav .row{
     background-color:white;
     display: flex;
     flex-direction: row;
-    padding: 10px 0 10px 0;
     align-items: center;
     color: #E24355;
     font-weight: 900;
    
+}
+
+nav h3{
+    margin: auto;
 }
 
 nav .menu i{
@@ -65,7 +68,6 @@ nav .logo a{
 nav .links {
     display: flex;
     justify-content: end;
-    padding-top: 15px;
     list-style: none;
     font-weight: 400;
 }

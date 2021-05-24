@@ -1,26 +1,5 @@
 let homeController = new ScrollMagic.Controller();
 
-let navTL =  gsap.timeline();
-navTL.fromTo(
-    "nav",
-    {
-        opacity: 0 
-    },
-    {
-        opacity: 1,
-        duration: .3
-    }    
-)
-let navScene = new ScrollMagic.Scene({ 
-    triggerElement: "nav",
-    triggerHook: 1,
-    reverse: false, 
-    offset: 500,
-    duration: 400,
-})
-.setTween(navTL)
-// .addIndicators()
-.addTo(homeController)
 
 // Jumbo ANIMATION
 let jumboTL =  gsap.timeline();
