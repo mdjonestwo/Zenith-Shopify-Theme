@@ -414,6 +414,7 @@ footer .extra-links a{
 
 footer .footer-special{
     background-color: darksalmon;
+    padding: 10px;
 }
 
 footer .subscribe-title{ 
@@ -436,7 +437,9 @@ footer input[type=text]{
 footer .footer-input {
     display: flex;
     justify-content: center;
+        margin-right: 5px;
 }
+
 
 footer .footer-input button{
     background-color: darksalmon;
@@ -455,6 +458,7 @@ footer .input-line{
 footer .special-text{
     display: flex;
     justify-content: center;
+    padding: 0 10px;
 
 }
 
@@ -467,12 +471,13 @@ footer .special-text p {
 footer .footer-special .social-icons {
     display: flex;
     justify-content: center;
+    padding-left: 0;
 }
 
 footer .footer-special .social-icons i{
     font-size: 24px;
     color: white;
-    margin: 20px 30px 0 30px;
+    margin: 20px 10px 0 10px;
 }
 
 
