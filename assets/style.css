@@ -70,6 +70,7 @@ nav .links {
     justify-content: end;
     list-style: none;
     font-weight: 400;
+    margin: 0 0;
 }
 
 nav .links i{
@@ -274,7 +275,7 @@ nav .links i{
 
 .message .row .col p{
     font-size: 24px;
-    padding: 5px 350px 5px 350px;
+    padding: 5px 100px 5px 100px;
     text-align: center;
 }
 
@@ -407,11 +408,16 @@ footer .sub-link{
     font-weight: 400;
 }
 
-footer .extra-links a{
-    font-weight: 400;
+footer .extra-links {
+ 
     
 }
 
+footer .extra-links p {
+   color: white;
+   text-align: center;
+   padding: 10px 45px 10px 45px;
+}
 footer .footer-special{
     background-color: darksalmon;
     padding: 10px;
@@ -471,7 +477,7 @@ footer .special-text p {
 footer .footer-special .social-icons {
     display: flex;
     justify-content: center;
-    padding-left: 0;
+    padding: 0 75px;
 }
 
 footer .footer-special .social-icons i{

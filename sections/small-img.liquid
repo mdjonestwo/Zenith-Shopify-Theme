@@ -1,7 +1,12 @@
 <section class="small-photo">
     <div class="row">
-        <div class="sm-img" style="background: url({{section.settings.small_image | img_url: '1200x'}});">
-        </div>
+      {% if section.settings.small_image != blank %}
+      <div class="sm-img" style="background: url({{section.settings.small_image | img_url: '1200x'}});">
+      </div>
+      {% else %}
+      <div class="sm-img" style="background: url({{"hanging-clothes.jpg" | asset_url}});">
+      </div>
+      {% endif %}
     </div>
 </section>
 

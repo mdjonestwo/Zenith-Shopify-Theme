@@ -1,9 +1,20 @@
 <section class="two-collections">
     <div class="row">      
+      {% if section.settings.left_image != blank %}
         <div class="l-img" style="background: url({{section.settings.left_image | img_url: '1200x'}}); background-size: cover;
         background-position: center center;"></div>
-        <div class="r-img" style="background: url({{section.settings.right_image | img_url: '1200x'}});     background-size: cover;
-        background-position: center center;"></div>
+      {%else%}
+        <div class="l-img" style="background: url({{"couch.jpg" | asset_url}}); background-size: cover;
+      background-position: center center;"></div>
+      {% endif %}
+      {% if section.settings.right_image != blank %}
+      <div class="r-img" style="background: url({{section.settings.right_image | img_url: '1200x'}}); background-size: cover;
+      background-position: center center;"></div>
+    {%else%}
+      <div class="l-img" style="background: url({{"full-shoe.jpg" | asset_url}}); background-size: cover;
+    background-position: center center;"></div>
+    {% endif %}
+
     </div>
 </section>
 

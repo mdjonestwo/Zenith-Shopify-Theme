@@ -1,9 +1,16 @@
 
     <section class="large-photo">
         <div class="row">
-            <div class="lg-bg" style="background: url({{section.settings.bottom_image | img_url: '1200x'}}); background-size: cover;
-            background-position: center center;">
-            </div>
+          {% if section.settings.bottom_image != blank %}
+          <div class="lg-bg" style="background: url({{section.settings.bottom_image | img_url: '1200x'}}); background-size: cover;
+          background-position: center center;">
+          </div>
+          {% else %}
+          <div class="lg-bg" style="background: url({{"shoes.jpg" | asset_url}}); background-size: cover;
+          background-position: center center;">
+          </div>
+          {% endif %}
+           
         </div>
     </section>
 

@@ -104,10 +104,13 @@
                 </a>
               {% endif %}
             {% endif %}
-            <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
+
+            <!-- <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
               {% include 'icon-search' %}
               <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
-            </button>
+            </button> -->
+
+
                 <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
                   {% include 'icon-cart' %}
                   <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
@@ -120,6 +123,117 @@
         </div>       
     </div>
 </nav>
+
+
+<section class="mobile-menu display">
+  <div class="mobile-contents">
+      <div class="row">
+          <div class="col close">
+              <i class="fas fa-times"></i>
+          </div>
+      </div>
+      <div class="row side-menu-container">
+          <div class="col">
+            
+                <ul>
+                  {% for link in linklists.main-menu.links %} 
+                  {% assign child_list_handle = link.title | handleize %} 
+                  {% if linklists[child_list_handle].links != blank %}
+
+                  <li class="mobile-links">
+                    <div class="link-header">
+                        <a href="{{link.url}}" class="">{{ link.title}}</a>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="sub-menu">
+                      {% for childlink in linklists[child_list_handle].links %}
+                      <a href="{{ childlink.url }}" class="sub-link">{{ childlink.title | escape }}</a>
+                      {% endfor %}
+                    </div>
+                  </li> 
+                  <hr>
+                  
+                  
+                  {% else %}
+
+                  <li class="mobile-links">
+                    <div class="links-header">
+                        <a href="{{ link.url }}" class="">{{ link.title }}</a>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                  </li>
+                  <hr>
+                  
+                  {% endif %} 
+                  {% endfor %}
+                </ul>
+              
+              <!-- <ul>
+                  <li class="mobile-links">
+                      <div class="links-header">
+                          <a href="" class="">Account</a>
+                          <i class="fas fa-plus"></i>
+                      </div>
+                      <div class="sub-menu">
+                          <a href="#" class="sub-link">Link 1</a>
+                          <a href="#" class="sub-link">Link 1</a>
+                          <a href="#" class="sub-link">Link 1</a>
+                      </div>
+                  </li>
+                  <hr>
+                  <li class="mobile-links">
+                      <div class="links-header">
+                          <a href="" class="">Help</a>
+                          <i class="fas fa-plus"></i>
+                      </div>
+                      <div class="sub-menu">
+                          <a href="#" class="sub-link">Link 1</a>
+                          <a href="#" class="sub-link">Link 1</a>
+                          <a href="#" class="sub-link">Link 1</a>
+                      </div>
+                  </li>
+                  <hr>
+              </ul> -->
+          </div>  
+      </div>
+      <div class="mobile-features">
+          <h3>Featured</h3>
+          <div class="row">
+              <div class="col">
+                  <img src="/assets/mens.jpg" alt="">
+              </div>
+              <a href="">Product</a>  
+          </div>
+          <div class="row">
+              <div class="col">
+                  <img src="/assets/girls.jpg" alt="">
+              </div>
+              <a href="">Product</a>  
+          </div>
+          <div class="row">
+              <div class="col">
+                  <img src="/assets/steals.jpg" alt="">
+              </div>
+              <a href="">Product</a>  
+          </div>
+          <div class="row">
+              <div class="col">
+                  <img src="/assets/graphx.jpg" alt="">
+              </div>
+              <a href="">Product</a>  
+          </div>
+      </div>
+      <div class="mobile-footer">
+          <ul>
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+          </ul>
+      </div>
+  </div>        
+</section>
+
 
 </div>
 
@@ -557,5 +671,5 @@
       "default": "#ffffff"
     }
   ]
-}
+} 
 {% endschema %}

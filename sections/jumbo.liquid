@@ -1,12 +1,18 @@
 <section class="jumbo">
     <div class="row">
+        {% if section.settings.bg_image != blank %}
         <div class="bg-image" style=" background: url({{section.settings.bg_image | img_url: '1200x'}});     background-size: cover;
         background-position: center center;
         background-repeat: none;"></div>
-        <!-- <div class="titles">
-            <h1>{{section.settings.jumbo_text}}</h1>
-            <h4>{{section.settings.sub_text}}</h4>
-        </div> -->
+        {% else %}
+        <div class="bg-image" style=" background: url({{"jumbo-model.jpg" | asset_url}});     background-size: cover;
+        background-position: center center;
+        background-repeat: none;"></div>          
+        {% endif %}
+        <div class="titles">
+            <!-- <h1>{{section.settings.jumbo_text}}</h1>
+            <h4>{{section.settings.sub_text}}</h4> -->
+        </div>
     </div>      
 </section>
 
@@ -39,7 +45,6 @@
           "category": "Image"
         }
       ]
-    
- 
+     
 }
 {% endschema %}

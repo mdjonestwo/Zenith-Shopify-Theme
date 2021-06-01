@@ -1,129 +1,323 @@
+<!-- <style>
+
+footer .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 650px;
+    background-color: {{section.settings.color_footer_bg}};;
+  
+}
+
+footer a{
+    color: {{section.settings.color_footer_text}};   
+}
+
+
+footer .row li{
+    list-style: none;
+    color: {{section.settings.color_footer_text}};;
+}
+
+footer .col-4{
+    padding: 25px 0 20px 0;
+}
+
+footer .sub-menu{
+    display: none;
+}
+
+footer hr{
+    border: 1px solid {{section.settings.color_footer_text}};
+    opacity: 100;
+}
+
+footer .footer-menu:hover .sub-menu{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+}
+
+footer .footer-header{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-header a{ 
+   text-decoration: none;
+}
+
+footer .sub-link{
+    padding: 10px 0 10px 0;
+    text-decoration: dashed;
+    color: {{section.settings.color_footer_text}};
+    font-weight: 400;
+}
+
+footer .extra-links a{
+    font-weight: 400;
+    
+}
+
+footer .footer-special{
+    background-color: {{section.settings.special_section_color}};;
+    padding: 10px;
+}
+
+footer .subscribe-title{ 
+    color: {{section.settings.color_footer_text}};
+    display: flex;
+    justify-content: center;
+}
+
+
+footer input[type=text]{
+    background-color: {{section.settings.special_section_color}};
+    border: 1px solid {{section.settings.special_section_color}};
+    width: 100%;
+    color: white;
+    opacity: 100;
+    font-size: 20px;
+    outline: none;
+}
+
+footer .footer-input {
+    display: flex;
+    justify-content: center;
+        margin-right: 5px;
+}
+
+
+footer .footer-input button{
+    background-color: {{section.settings.special_section_color}};
+    border: 1px solid {{section.settings.special_section_color}};
+    color:  {{section.settings.color_footer_text}}
+    font-size: 20px;
+    
+
+}
+
+footer .input-line{
+    margin: 0 15% 20px 15%;
+    
+}
+
+footer .special-text{
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+
+}
+
+footer .special-text p {
+    text-align: center;
+    width: 350px;
+    color: {{section.settings.color_footer_text}};
+}
+
+footer .footer-special .social-icons {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+footer .footer-special .social-icons i{
+    font-size: 24px;
+    color: {{section.settings.color_footer_text}};
+    margin: 20px 10px 0 10px;
+}
+
+
+
+</style> -->
+
+<!-- 
+
+            {% for link in linklists.main-menu.links %} 
+                {% assign child_list_handle = link.title | handleize %} 
+                {% if linklists[child_list_handle].links != blank %}
+
+                <li class="footer-menu">
+                  <div class="footer-header">
+                      <a href="{{link.url}}" class="footer-nav-title">{{ link.title}}</a>
+                      <i class="fas fa-plus"></i>
+                  </div>
+                  <div class="sub-menu">
+                    {% for childlink in linklists[child_list_handle].links %}
+                    <a href="{{ childlink.url }}" class="sub-link">{{ childlink.title | escape }}</a>
+                    {% endfor %}
+                  </div>
+                 </li> 
+                
+                
+                {% else %}
+
+                <li class="footer-menu">
+                  <div class="footer-header">
+                      <a href="{{ link.url }}" class="footer-nav-title">{{ link.title }}</a>
+                      <i class="fas fa-plus"></i>
+                  </div>
+                </li>
+                
+                {% endif %} 
+            {% endfor %} -->
+
 
 <footer>
     <div class="row">
-        <div class="col-4">
+        <!-- <div class="col-4">
             <ul>
-                <li class="footer-menu">
-                    <div class="footer-header">
-                        <a href="" class="footer-nav-title">Account</a>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                    </div>
-                </li>
-                <hr>
-                <li class="footer-menu">
-                    <div class="footer-header">
-                        <a href="" class="footer-nav-title">Help</a>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                    </div>
-                </li>
-                <hr>
-                <li class="footer-menu">
-                    <div class="footer-header">
-                        <a href="" class="footer-nav-title">Contact Us</a>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                    </div>
-                </li>
-                <hr>
-                <li class="footer-menu">
-                    <div class="footer-header">
-                        <a href="" class="footer-nav-title">Company</a>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                    </div>
-                </li>
-                <hr>
-                <li class="footer-menu">
-                    <div class="footer-header">
-                        <a href="" class="footer-nav-title">Our Stores</a>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                    </div>
-                </li>
-                <hr>
-                <li class="footer-menu">
-                    <div class="footer-header">
-                        <a href="" class="footer-nav-title">Legal</a>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                        <a href="#" class="sub-link">Link 1</a>
-                    </div>
-                </li>
-                <hr>
+              {% for link in linklists.main-menu.links %} 
+              {% assign child_list_handle = link.title | handleize %} 
+              {% if linklists[child_list_handle].links != blank %}
+
+              <li class="footer-menu">
+                <div class="footer-header">
+                    <a href="{{link.url}}" class="footer-nav-title">{{ link.title}}</a>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="sub-menu">
+                  {% for childlink in linklists[child_list_handle].links %}
+                  <a href="{{ childlink.url }}" class="sub-link">{{ childlink.title | escape }}</a>
+                  {% endfor %}
+                </div>
+               </li> 
+               <hr>
+              
+              
+              {% else %}
+
+              <li class="footer-menu">
+                <div class="footer-header">
+                    <a href="{{ link.url }}" class="footer-nav-title">{{ link.title }}</a>
+                    <i class="fas fa-plus"></i>
+                </div>
+              </li>
+              <hr>
+              
+              {% endif %} 
+              {% endfor %}
             </ul>
-        </div>
+        </div> -->
+        <div class="col-4">
+          <ul>
+            {% for block in section.blocks %} 
+            {% assign footer_linklist = block.settings.menu%} 
+            {% if linklists[footer_linklist].links != blank %}
+
+            <li class="footer-menu">
+              <div class="footer-header">
+                  <a href="#" class="footer-nav-title">{{block.settings.title}}</a>
+                  <i class="fas fa-plus"></i>
+              </div>
+              <div class="sub-menu">
+                {% for childlink in linklists[footer_linklist].links %}
+                <a href="{{ childlink.url }}" class="sub-link">{{ childlink.title | escape }}</a>
+                {% endfor %}
+              </div>
+             </li> 
+             <hr>
+            
+            
+            {% else %}
+
+            <li class="footer-menu">
+              <div class="footer-header">
+                  <a href="#" class="footer-nav-title">{{block.settings.title}}</a>
+                  <i class="fas fa-plus"></i>
+              </div>
+            </li>
+            <hr>
+            
+            {% endif %} 
+            {% endfor %}
+          </ul>
+      </div>
+  
     
         <div class="col-4 extra-links">
-    
-        <ul>
-            <li>
-                <a href="">Discount Program</a>
-            </li>
-            <li>
-                <a href="">Refer-A-Friend</a>
-            </li>
-
-        </ul>
+         <p>
+          123 Maple Ave, Durham, NC 27701
+         </p>
         </div>
         <div class="col-4 footer-special">
         <div class="subscribe-title">
-            <h3>Stay In The Know</h3>
+            <h3>{{section.settings.socials_title}}</h3>
         </div>
-        <div class="footer-input">
+        <!-- <div class="footer-input">
             <input type="text" placeholder="Email">
             <button>Submit</button>
-        </div>
+        </div> -->
         <hr class="input-line">
         <div class="special-text">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid tempore voluptate sit, fugit earum!</p>
+            <p>{{section.settings.socials_details}}</p>
         </div>
-        <ul class="social-icons">
-            <li>
-                <a href="#">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://">
-                    <i class="fa fa-google" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://">
-                    <i class="fa fa-youtube" aria-hidden="true"></i>
-                </a>
-            </li>
-        </ul>
+           <ul class="social-icons">
+                        {%if settings.social_facebook_link != blank %}
+                        <li>
+                            <a href={{settings.social_facebook_link}}>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_google_link != blank %}
+                        <li>                      
+                            <a href={{settings.social_google_link}}>
+                                <i class="fa fa-google" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_twitter_link != blank %}
+                        <li>
+                            <a href={{settings.social_twitter_link}}>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_instagram_link != blank %}
+                        <li>
+                            <a href={{settings.social_instagram_link}}>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_youtube_link != blank %}
+                        <li>                           
+                            <a href={{settings.social_youtube_link}}>
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_pinterest_link != blank %}
+                        <li>
+                            <a href={{settings.social_pinterest_link}}>
+                                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_snapchat_link != blank %}
+                        <li>
+                            <a href={{settings.social_snapchat_link}}>
+                                <i class="fa fa-snapchat" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_vimeo_link != blank %}
+                        <li>
+                            <a href={{settings.vimeo_link}}>
+                                <i class="fa fa-vimeo" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+                        {%if settings.social_tumblr_link != blank %}
+                        <li>
+                            <a href={{settings.social_tumblr_link}}>
+                                <i class="fa fa-tumblr" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        {%endif%}
+
+                    </ul>
         </div>
 </div>
 </footer>
@@ -153,298 +347,47 @@
     "zh-CN": "页脚",
     "zh-TW": "頁尾"
   },
-  "max_blocks": 4,
+  "max_blocks": 6,
   "settings": [
     {
       "type": "header",
-      "content": {
-        "cs": "Platební metody",
-        "da": "Betalingsmetoder",
-        "de": "Zahlungsmethoden",
-        "en": "Payment methods",
-        "es": "Métodos de pago",
-        "fi": "Maksutavat",
-        "fr": "Moyens de paiement",
-        "it": "Metodi di pagamento",
-        "ja": "決済方法",
-        "ko": "결제 방법",
-        "nb": "Betalingsmetoder",
-        "nl": "Betaalmethoden",
-        "pl": "Metody płatności",
-        "pt-BR": "Formas de pagamento",
-        "pt-PT": "Métodos de Pagamento",
-        "sv": "Betalningsmetoder",
-        "th": "วิธีการชำระเงิน",
-        "tr": "Ödeme yöntemleri",
-        "vi": "Phương thức thanh toán",
-        "zh-CN": "支付方式",
-        "zh-TW": "付款方式"
-      }
-    },
-    {
-      "type": "checkbox",
-      "id": "show_payment_icons",
-      "label": {
-        "cs": "Zobrazit ikony plateb",
-        "da": "Vis betalingsikoner",
-        "de": "Zahlungs-Buttons anzeigen",
-        "en": "Show payment icons",
-        "es": "Mostrar iconos de pago",
-        "fi": "Näytä maksukuvakkeet",
-        "fr": "Afficher les icônes de paiement",
-        "it": "Mostra le icone di pagamento",
-        "ja": "支払いアイコンを表示する",
-        "ko": "결제 아이콘 표시",
-        "nb": "Vis betalingsikoner",
-        "nl": "Betalingspictogrammen weergeven",
-        "pl": "Pokaż ikony płatności",
-        "pt-BR": "Exibir ícones de pagamento",
-        "pt-PT": "Mostrar ícones de pagamento",
-        "sv": "Visa betalningsikoner",
-        "th": "แสดงไอคอนการชำระเงิน",
-        "tr": "Ödeme simgelerini göster",
-        "vi": "Hiển thị biểu tượng thanh toán",
-        "zh-CN": "显示付款图标",
-        "zh-TW": "顯示付款圖示"
-      },
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": {
-        "cs": "Barva",
-        "da": "Farve",
-        "de": "Farbe",
-        "en": "Color",
-        "es": "Color",
-        "fi": "Väri",
-        "fr": "Couleur",
-        "it": "Colore",
-        "ja": "色",
-        "ko": "색상",
-        "nb": "Farge",
-        "nl": "Kleur",
-        "pl": "Kolor",
-        "pt-BR": "Cor",
-        "pt-PT": "Cor",
-        "sv": "Färg",
-        "th": "สี",
-        "tr": "Renk",
-        "vi": "Màu",
-        "zh-CN": "颜色",
-        "zh-TW": "顏色"
-      }
+      "content": "Color"
     },
     {
       "type": "color",
       "id": "color_footer_bg",
-      "label": {
-        "cs": "Pozadí",
-        "da": "Baggrund",
-        "de": "Hintergrund",
-        "en": "Background",
-        "es": "Fondo",
-        "fi": "Tausta",
-        "fr": "Couleur de fond",
-        "it": "Sfondo",
-        "ja": "背景",
-        "ko": "배경",
-        "nb": "Bakgrunn",
-        "nl": "Achtergrond",
-        "pl": "Tło",
-        "pt-BR": "Plano de fundo",
-        "pt-PT": "Fundo",
-        "sv": "Bakgrund",
-        "th": "พื้นหลัง",
-        "tr": "Arka plan",
-        "vi": "Nền",
-        "zh-CN": "背景",
-        "zh-TW": "背景"
-      },
-      "default": "#f6f6f6"
+      "label": "Background",
+      "default": "#EA0606"
+    },
+    {
+      "type": "color",
+      "id": "special_section_color",
+      "label": "Background",
+      "default": "#EA0606"
     },
     {
       "type": "color",
       "id": "color_footer_text",
-      "label": {
-        "cs": "Text",
-        "da": "Tekst",
-        "de": "Text",
-        "en": "Text",
-        "es": "Texto",
-        "fi": "Teksti",
-        "fr": "Texte",
-        "it": "Testo",
-        "ja": "テキスト",
-        "ko": "텍스트",
-        "nb": "Tekst",
-        "nl": "Tekst",
-        "pl": "Tekst",
-        "pt-BR": "Texto",
-        "pt-PT": "Texto",
-        "sv": "Text",
-        "th": "ข้อความ",
-        "tr": "Metin",
-        "vi": "Văn bản",
-        "zh-CN": "文本",
-        "zh-TW": "文字"
-      },
-      "default": "#333232"
+      "label": "Text",
+      "default": "#FFFFFF"
     },
     {
       "type": "header",
-      "content": {
-        "cs": "Selektor jazyka",
-        "da": "Sprogvælger",
-        "de": "Sprachauswahl",
-        "en": "Language Selector",
-        "es": "Selector de idioma",
-        "fi": "Kielenvalitsin",
-        "fr": "Sélecteur de langue",
-        "it": "Selettore lingua",
-        "ja": "言語セレクター",
-        "ko": "언어 선택기",
-        "nb": "Språkvelger",
-        "nl": "Taalkiezer",
-        "pl": "Selektor języka",
-        "pt-BR": "Seletor de idiomas",
-        "pt-PT": "Seletor de Idioma",
-        "sv": "Språkväljare",
-        "th": "ตัวเลือกภาษา",
-        "tr": "Dil Seçici",
-        "vi": "Hộp chọn ngôn ngữ",
-        "zh-CN": "语言选择器",
-        "zh-TW": "語言選擇器"
-      },
-      "info": {
-        "cs": "Pokud chcete přidat jazyk, přejděte na [jazykové nastavení.](/admin/settings/languages)",
-        "da": "Du kan tilføje et sprog ved at gå til dine [sprogindstillinger.](/admin/settings/languages)",
-        "de": "Gehe zu deinen [Spracheinstellungen](/admin/settings/languages), um eine Sprache hinzuzufügen.",
-        "en": "To add a language, go to your [language settings.](/admin/settings/languages)",
-        "es": "Para agregar un idioma, ve a tu[configuración de idioma](/admin/settings/languages)",
-        "fi": "Lisää kieli siirtymällä [kieliasetuksiin.](/admin/settings/languages)",
-        "fr": "Pour ajouter une langue, allez dans vos [paramètres de langue.](/admin/settings/languages).",
-        "it": "Per aggiungere una lingua, vai su [impostazioni della lingua.](/admin/settings/languages)",
-        "ja": "言語を追加するには、[言語設定](/admin/settings/languages) に移動します。",
-        "ko": "언어를 추가하려면 [언어 설정.](/admin/settings/languages)(으)로 이동하십시오.",
-        "nb": "For å legge til et språk, går du til dine [språkinnstillinger.](/admin/settings/languages)",
-        "nl": "Ga naar je [taalinstellingen.](/admin/settings/languages) om een taal toe te voegen.",
-        "pl": "Aby dodać język, przejdź do swoich [ustawień języka.](/admin/settings/languages)",
-        "pt-BR": "Para adicionar um idioma, acesse suas [configurações de idioma. ](/admin/settings/languages)",
-        "pt-PT": "Para adicionar um idioma, aceda a [definições de idioma.](/admin/settings/languages)",
-        "sv": "För att lägga till ett språk, gå till dina [språkinställningar.](/admin/settings/languages)",
-        "th": "หากต้องการเพิ่มภาษา ให้ไปที่ [การตั้งค่าภาษา ](/admin/settings/languages) ของคุณ",
-        "tr": "Dil eklemek için [dil ayarları](/admin/settings/languages) bölümünüze gidin.",
-        "vi": "Để thêm ngôn ngữ, mở [cài đặt ngôn ngữ.](/admin/settings/languages)",
-        "zh-CN": "若要添加语言，请转到您的 [语言设置。](/admin/settings/languages)",
-        "zh-TW": "若要新增語言，請前往 [語言設定。](/admin/settings/languages)"
-      }
+      "content": "Socials"
     },
     {
-      "type": "checkbox",
-      "id": "show_locale_selector",
-      "label": {
-        "cs": "Zobrazit selektor jazyka",
-        "da": "Vis sprogvælger",
-        "de": "Sprachauswahl anzeigen",
-        "en": "Show language selector",
-        "es": "Mostrar el selector de idioma",
-        "fi": "Näytä kielenvalitsin",
-        "fr": "Afficher le sélecteur de langue",
-        "it": "Mostra selettore lingua",
-        "ja": "言語セレクターを表示する",
-        "ko": "언어 선택기 표시",
-        "nb": "Vis språkvelger",
-        "nl": "Taalkiezer weergeven",
-        "pl": "Pokaż selektor języka",
-        "pt-BR": "Exibir seletor de idioma",
-        "pt-PT": "Mostrar seletor de idioma",
-        "sv": "Visa språkväljare",
-        "th": "แสดงตัวเลือกภาษา",
-        "tr": "Dil seçiciyi göster",
-        "vi": "Hiển thị hộp chọn ngôn ngữ",
-        "zh-CN": "显示语言选择器",
-        "zh-TW": "顯示語言選擇器"
-      },
-      "default": true
+      "type": "text",
+      "id": "socials_title",
+      "label": "Title",
+      "default": "Stay in the know"
     },
     {
-      "type": "header",
-      "content": {
-        "cs": "Selektor země/oblasti",
-        "da": "Land/område-vælger",
-        "de": "Auswahl für Land/Region",
-        "en": "Country/region Selector",
-        "es": "Selector de país/región",
-        "fi": "Maa-/aluevalitsin",
-        "fr": "Sélecteur de pays/région",
-        "it": "Selettore paese/regione",
-        "ja": "国/地域セレクター",
-        "ko": "국가/지역 선택기",
-        "nb": "Land-/regionvelger",
-        "nl": "Kiezer voor land/regio",
-        "pl": "Selektor kraju/regionu",
-        "pt-BR": "Seletor de país/região",
-        "pt-PT": "Seletor de país/região",
-        "sv": "Land/region-väljare",
-        "th": "ตัวเลือกประเทศ/ภูมิภาค",
-        "tr": "Ülke/Bölge Seçici",
-        "vi": "Hộp chọn quốc gia/vùng",
-        "zh-CN": "国家/地区选择器",
-        "zh-TW": "國家/地區選擇器"
-      },
-      "info": {
-        "cs": "Pokud chcete přidat zemi nebo oblast, přejděte na [nastavení plateb.](/admin/settings/payments)",
-        "da": "For at tilføje et land/område skal du gå til dine [betalingsindstillinger.](/admin/settings/payments)",
-        "de": "Gehe zu deinen [Zahlungseinstellungen](/admin/settings/payments), um ein Land/eine Region hinzuzufügen.",
-        "en": "To add a country/region, go to your [payment settings.](/admin/settings/payments)",
-        "es": "Para agregar una país/región, ve a tu [configuración de pago.](/admin/settings/payments)",
-        "fi": "Lisää maa/alue siirtymällä omiin [maksuasetuksiisi.](/admin/settings/payments)",
-        "fr": "Pour ajouter un pays/une région, allez dans vos [paramètres de paiement.](/admin/settings/payments)",
-        "it": "Per aggiungere un paese/regione, vai a [impostazioni pagamento.](/admin/settings/payments)",
-        "ja": "国/地域を追加するには、[決済設定](/admin/settings/payments) に移動します。",
-        "ko": "국가/지역을 추가하려면 [결제 설정](/admin/settings/payments)(으)로 이동하십시오.",
-        "nb": "For å legge til et land/region må du gå til [betalingsinnstillingene.](/admin/settings/payments)",
-        "nl": "Ga naar je [betaalinstellingen.](/admin/settings/payments) om een land/regio toe te voegen.",
-        "pl": "Aby dodać kraj/region, przejdź do swoich [ustawień płatności.](/admin/settings/payments)",
-        "pt-BR": "Para adicionar um país/região, acesse as [configurações de pagamento.](/admin/settings/payments)",
-        "pt-PT": "Para adicionar um país/região, aceda às [definições de pagamento.](/admin/settings/payments)",
-        "sv": "För att lägga till land/region går du till dina [betalningsinställningar.](/admin/settings/payments)",
-        "th": "หากต้องการเพิ่มประเทศ/ภูมิภาค ให้ไปที่ [การตั้งค่าการชำระเงิน](/admin/settings/payments)",
-        "tr": "Ülke/bölge eklemek için [ödeme ayarlarınıza](/admin/settings/payments) gidin.",
-        "vi": "Để thêm quốc gia/vùng, vào [cài đặt thanh toán.](/admin/settings/payments)",
-        "zh-CN": "若要添加国家/地区，请转到 [支付设置。](/admin/settings/payments)",
-        "zh-TW": "若要新增國家/地區，請前往 [付款設定。](/admin/settings/payments)"
-      }
-    },
-    {
-      "type": "checkbox",
-      "id": "show_currency_selector",
-      "label": {
-        "cs": "Zobrazit selektor země/oblasti",
-        "da": "Vis land/område-vælger",
-        "de": "Auswahl für Land/Region anzeigen",
-        "en": "Show country/region selector",
-        "es": "Mostrar selector de país/región",
-        "fi": "Näytä maa-/aluevalitsin",
-        "fr": "Afficher le sélecteur de pays/région",
-        "it": "Mostra selettore paese/regione",
-        "ja": "国/地域セレクターを表示する",
-        "ko": "국가/지역 선택기 표시",
-        "nb": "Vis land-/regionvelger",
-        "nl": "Kiezer voor land/regio weergeven",
-        "pl": "Pokaż selektor kraju/regionu",
-        "pt-BR": "Exibir seletor de país/região",
-        "pt-PT": "Mostrar seletor de país/região",
-        "sv": "Visa land/region-väljare",
-        "th": "แสดงตัวเลือกประเทศ/ภูมิภาค",
-        "tr": "Ülke/bölge seçiciyi göster",
-        "vi": "Hiển thị hộp chọn quốc gia/vùng",
-        "zh-CN": "显示国家/地区选择器",
-        "zh-TW": "顯示國家/地區選擇器"
-      },
-      "default": true
+      "type": "text",
+      "id": "socials_details",
+      "label": "Details",
+      "default": "Follow us to stay updated on deals, give aways and to see what our team is up to!"
     }
+    
   ],
   "blocks": [
     {

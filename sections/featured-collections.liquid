@@ -12,20 +12,44 @@
         </div> 
         <div class="row product-list">
             <div class="col">
-                <img src={{collection1.image  | img_url: 'medium'}}/> 
-                <a style="color: {{section.settings.link_color}};" href="{{collection1.url}}">{{collection1.title}}</a>
+              {% if section.settings.collection1 != blank %}
+              <a href="{{collection1.url}}"><img src={{collection1.image  | img_url: 'medium'}}/> 
+              </a>
+              <a style="color: {{section.settings.link_color}};" href="{{collection1.url}}">{{collection1.title}}</a>
+              {% else %}
+              <img src={{"no_img.jpg"| asset_url }}/> 
+              <a style="color: {{section.settings.link_color}};" href="{{collection1.url}}">Collection Name</a>
+              {% endif %}
             </div>
             <div class="col">
-                <img src={{collection2.image  | img_url: 'medium'}}/> 
-                <a style="color: {{section.settings.link_color}};" href="{{collection2.url}}">{{collection2.title}}</a>
+              {% if section.settings.collection2 != blank %}
+              <a href="{{collection2.url}}"><img src={{collection2.image  | img_url: 'medium'}}/> 
+              </a>
+              <a style="color: {{section.settings.link_color}};" href="{{collection2.url}}">{{collection2.title}}</a>
+              {% else %}
+              <img src={{"no_img.jpg"| asset_url }}/> 
+              <a style="color: {{section.settings.link_color}};" href="{{collection2.url}}">Collection Name</a>
+              {% endif %}
             </div>
             <div class="col">
-                <img src={{collection3.image  | img_url: 'medium'}}/> 
-                <a style="color: {{section.settings.link_color}};" href="{{collection3.url}}">{{collection3.title}}</a>
+              {% if section.settings.collection3 != blank %}
+              <a href="{{collection3.url}}"><img src={{collection3.image  | img_url: 'medium'}}/> 
+              </a>
+              <a style="color: {{section.settings.link_color}};" href="{{collection3.url}}">{{collection3.title}}</a>
+              {% else %}
+              <img src={{"no_img.jpg"| asset_url }}/> 
+              <a style="color: {{section.settings.link_color}};" href="{{collection3.url}}">Collection Name</a>
+              {% endif %}
             </div>
             <div class="col">
-                <img src={{collection4.image  | img_url: 'medium'}}/> 
-                <a style="color: {{section.settings.link_color}};" href="{{collection4.url}}">{{collection4.title}}</a>
+              {% if section.settings.collection4 != blank %}
+              <a href="{{collection4.url}}"><img src={{collection4.image  | img_url: 'medium'}}/> 
+              </a>
+              <a style="color: {{section.settings.link_color}};" href="{{collection4.url}}">{{collection4.title}}</a>
+              {% else %}
+              <img src={{"no_img.jpg"| asset_url }}/> 
+              <a style="color: {{section.settings.link_color}};" href="{{collection4.url}}">Collection Name</a>
+              {% endif %}
             </div>
         </div>
     </section>
@@ -41,13 +65,13 @@
             "type": "text",
             "id": "header_text",
             "label": "Title",
-            "default": "Dope Stuff"
+            "default": "Products"
         },
         {
             "type": "text",
             "id": "sub_text",
             "label": "Title",
-            "default": "From men's and women's shoes to a wide array of bags, discover sustainable styles made for all."
+            "default": "The most outstanding selections for men and women. Outstanding styles made for all."
     
         },
         {
