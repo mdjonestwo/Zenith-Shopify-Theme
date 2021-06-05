@@ -487,6 +487,12 @@ footer .footer-special .social-icons i{
 }
 
 
+.content-wrapper {
+    padding: 25px
+}
+
+
+
 /* // X-Small devices (portrait phones, less than 576px) */
 /* // No media query for `xs` since this is the default in Bootstrap */
 
@@ -513,6 +519,11 @@ footer .footer-special .social-icons i{
     nav .row .col{
         display: flex;
         align-content: center;
+    }
+
+    nav .logo{ 
+        font-size: 12px;
+        text-align: center;
     }
 
     .jumbo .bg-image{

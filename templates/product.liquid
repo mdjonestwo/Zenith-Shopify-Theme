@@ -1,11 +1,12 @@
 {% comment %}
   The contents of the product.liquid template can be found in /sections/product-template.liquid
 {% endcomment %}
-
-{% section 'product-template' %}
-{% section 'product-recommendations' %}
-
-<div id="backToCollection"></div>
+<div class="content-wrapper">
+  {% section 'product-template' %}
+  {% section 'product-recommendations' %}
+  
+  <div id="backToCollection"></div>  
+</div>
 
 <script>
   // Override default values of shop.strings for each template.

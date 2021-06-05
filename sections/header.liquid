@@ -11,6 +11,20 @@
         margin: 0;
       }
     {% endif %}
+
+
+      mobile-menu i{
+        color: {{section.setttings.font_color}}
+      }
+
+      mobile-menu a{
+        color: {{section.setttings.font_color}}  
+      }
+
+      .mobile-menu hr{
+        border: 1px solid {{section.setttings.font_color}};
+      }
+
   </style>
 {% endif %}
 
@@ -125,7 +139,7 @@
 </nav>
 
 
-<section class="mobile-menu display">
+<section class="mobile-menu display" style="background-color: {{section.settings.bg_color}};">
   <div class="mobile-contents">
       <div class="row">
           <div class="col close">
@@ -141,7 +155,7 @@
                   {% if linklists[child_list_handle].links != blank %}
 
                   <li class="mobile-links">
-                    <div class="link-header">
+                    <div class="links-header">
                         <a href="{{link.url}}" class="">{{ link.title}}</a>
                         <i class="fas fa-plus"></i>
                     </div>
@@ -152,8 +166,7 @@
                     </div>
                   </li> 
                   <hr>
-                  
-                  
+                                    
                   {% else %}
 
                   <li class="mobile-links">
@@ -167,69 +180,42 @@
                   {% endif %} 
                   {% endfor %}
                 </ul>
-              
-              <!-- <ul>
-                  <li class="mobile-links">
-                      <div class="links-header">
-                          <a href="" class="">Account</a>
-                          <i class="fas fa-plus"></i>
-                      </div>
-                      <div class="sub-menu">
-                          <a href="#" class="sub-link">Link 1</a>
-                          <a href="#" class="sub-link">Link 1</a>
-                          <a href="#" class="sub-link">Link 1</a>
-                      </div>
-                  </li>
-                  <hr>
-                  <li class="mobile-links">
-                      <div class="links-header">
-                          <a href="" class="">Help</a>
-                          <i class="fas fa-plus"></i>
-                      </div>
-                      <div class="sub-menu">
-                          <a href="#" class="sub-link">Link 1</a>
-                          <a href="#" class="sub-link">Link 1</a>
-                          <a href="#" class="sub-link">Link 1</a>
-                      </div>
-                  </li>
-                  <hr>
-              </ul> -->
+  
           </div>  
       </div>
+      
       <div class="mobile-features">
-          <h3>Featured</h3>
+        {%- assign collection1 = collections[section.settings.collection1] -%}
+        {%- assign collection2 = collections[section.settings.collection2] -%}
+          <h3>{{section.settings.header_text}}</h3>
           <div class="row">
-              <div class="col">
-                  <img src="/assets/mens.jpg" alt="">
-              </div>
-              <a href="">Product</a>  
+            {% if section.settings.collection1 != blank %}
+            <div class="col">
+              <a href="{{collection1.url}}"><img src={{collection1.image  | img_url: 'medium'}}/> 
+              </a>
+            </div>
+            <a style="color: {{section.settings.link_color}};" href="{{collection1.url}}">{{collection1.title}}</a>
+            {% else %}
+            <div class="col">
+              <img src={{"no_img.jpg"| asset_url }}/> 
+            </div>
+              <a style="color: {{section.settings.link_color}};" href="{{collection1.url}}">Collection Name</a>
+              {% endif %}
           </div>
           <div class="row">
-              <div class="col">
-                  <img src="/assets/girls.jpg" alt="">
-              </div>
-              <a href="">Product</a>  
+            {% if section.settings.collection2 != blank %}
+            <div class="col">
+              <a href="{{collection2.url}}"><img src={{collection2.image  | img_url: 'medium'}}/> 
+              </a>
+            </div>
+            <a style="color: {{section.settings.link_color}};" href="{{collection2.url}}">{{collection2.title}}</a>
+            {% else %}
+            <div class="col">
+              <img src={{"no_img.jpg"| asset_url }}/> 
+            </div>
+              <a style="color: {{section.settings.link_color}};" href="{{collection2.url}}">Collection Name</a>
+              {% endif %} 
           </div>
-          <div class="row">
-              <div class="col">
-                  <img src="/assets/steals.jpg" alt="">
-              </div>
-              <a href="">Product</a>  
-          </div>
-          <div class="row">
-              <div class="col">
-                  <img src="/assets/graphx.jpg" alt="">
-              </div>
-              <a href="">Product</a>  
-          </div>
-      </div>
-      <div class="mobile-footer">
-          <ul>
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-          </ul>
       </div>
   </div>        
 </section>
@@ -431,6 +417,40 @@
         "zh-TW": "選單"
       },
       "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Hidden Side Navbar"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Title",
+      "default": "Featured"
+  },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#E24355"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "collection",
+      "id": "collection1",
+      "label": "Collection 1",
+      "info": "Choose a collection"
+   },
+   {
+    "type": "collection",
+    "id": "collection2",
+    "label": "Collection 2",
+    "info": "Choose a collection"
     },
     {
       "type": "header",
@@ -670,6 +690,7 @@
       },
       "default": "#ffffff"
     }
+ 
   ]
 } 
 {% endschema %}
